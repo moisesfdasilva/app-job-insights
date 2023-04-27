@@ -1,21 +1,18 @@
 from functools import lru_cache
 from typing import List, Dict
 
+import csv
+
 
 @lru_cache
 def read(path: str) -> List[Dict]:
-    """Reads a file from a given path and returns its contentsssssss
+    with open(path, "r") as jobs_file:
+        data_list = csv.DictReader(jobs_file)
+        result = []
+        for data in data_list:
+            result.append(data)
+        return result
 
-    Parameters
-    ----------
-    path : str
-        Full path to file
-
-    Returns
-    -------
-    list
-        List of rows as dicts
-    """
     raise NotImplementedError
 
 
