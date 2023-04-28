@@ -18,10 +18,10 @@ def read(path: str) -> List[Dict]:
 
 def get_unique_job_types(path: str) -> List[str]:
     data_list = read(path)
-    all_job_types = []
+    all_jobs_types = []
     for data in data_list:
-        all_job_types.append(data["job_type"])
-    result = set(all_job_types)
+        all_jobs_types.append(data["job_type"])
+    result = set(all_jobs_types)
     return result
 
     raise NotImplementedError

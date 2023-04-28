@@ -4,11 +4,11 @@ from src.insights.jobs import read
 
 def get_unique_industries(path: str) -> List[str]:
     data_list = read(path)
-    all_job_industries = []
+    all_jobs_industries = []
     for data in data_list:
         if (data["industry"] != ""):
-            all_job_industries.append(data["industry"])
-    result = set(all_job_industries)
+            all_jobs_industries.append(data["industry"])
+    result = set(all_jobs_industries)
     return result
 
     raise NotImplementedError
