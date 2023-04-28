@@ -13,8 +13,6 @@ def read(path: str) -> List[Dict]:
             result.append(data)
         return result
 
-    raise NotImplementedError
-
 
 def get_unique_job_types(path: str) -> List[str]:
     data_list = read(path)
@@ -24,8 +22,6 @@ def get_unique_job_types(path: str) -> List[str]:
     result = set(all_jobs_types)
     return result
 
-    raise NotImplementedError
-
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
     all_jobs_with_a_type = []
@@ -33,5 +29,3 @@ def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
         if (job["job_type"] == job_type):
             all_jobs_with_a_type.append(job)
     return all_jobs_with_a_type
-
-    raise NotImplementedError

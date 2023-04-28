@@ -11,8 +11,6 @@ def get_unique_industries(path: str) -> List[str]:
     result = set(all_jobs_industries)
     return result
 
-    raise NotImplementedError
-
 
 def filter_by_industry(jobs: List[Dict], industry: str) -> List[Dict]:
     all_jobs_with_a_industry = []
@@ -20,5 +18,3 @@ def filter_by_industry(jobs: List[Dict], industry: str) -> List[Dict]:
         if (job["industry"] == industry):
             all_jobs_with_a_industry.append(job)
     return all_jobs_with_a_industry
-
-    raise NotImplementedError

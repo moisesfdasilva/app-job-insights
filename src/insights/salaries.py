@@ -18,8 +18,6 @@ def get_max_salary(path: str) -> int:
     print(set(all_exceptions))
     return result
 
-    raise NotImplementedError
-
 
 def get_min_salary(path: str) -> int:
     data_list = read(path)
@@ -36,8 +34,6 @@ def get_min_salary(path: str) -> int:
     result = min(all_jobs_min_salaries)
     print(set(all_exceptions))
     return result
-
-    raise NotImplementedError
 
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
@@ -58,25 +54,20 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
             result = False
     return result
 
-    raise NotImplementedError
-
 
 def filter_by_salary_range(
     jobs: List[dict],
     salary: Union[str, int]
 ) -> List[Dict]:
-    """Filters a list of jobs by salary range
-
-    Parameters
-    ----------
-    jobs : list
-        The jobs to be filtered
-    salary : int
-        The salary to be used as filter
-
-    Returns
-    -------
-    list
-        Jobs whose salary range contains `salary`
-    """
-    raise NotImplementedError
+    all_jobs_in_salary_range = []
+    all_exceptions = []
+    for job in jobs:
+        try:
+            is_in_salary_range = matches_salary_range(job, salary)
+        except ValueError:
+            all_exceptions.append([job, salary])
+        else:
+            if (is_in_salary_range):
+                all_jobs_in_salary_range.append(job)
+    print(all_exceptions)
+    return all_jobs_in_salary_range
